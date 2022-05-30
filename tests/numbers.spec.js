@@ -14,9 +14,21 @@ const numbers = require('../src/numbers');
 
 */
 
-describe('21 - Implemente os casos de teste para a função `numbers`', () => {
+describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   it(' apenas números', () => {
     expect(true).toEqual(numbers([1, 2, 3, 4, 5]));
+  });
+
+  it('numero como string', () => {
+    expect(false).toEqual(numbers([1, 2, '3', 4, 5]));
+  });
+  
+  it('string no meio', () => {
+    expect(false).toEqual(numbers([1, 2, 'a', 4, 5]));
+  });
+  
+  it('array vazios', () => {
+    expect(false).toEqual(numbers([' ']));
 
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
